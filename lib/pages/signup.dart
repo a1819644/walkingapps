@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -95,6 +94,8 @@ class _SignupState extends State<Signup> {
                           borderSide: BorderSide.none,),
                       ),
                       validator: (value) {
+                        return null;
+                      
                         // ... your email validation logic ...
                       },
                     ),
@@ -258,10 +259,10 @@ class _SignupState extends State<Signup> {
                   width: double.infinity, // Make button take fullwidth
                   child: ElevatedButton(
                     style: ButtonStyle(
-                      foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                      backgroundColor: MaterialStateProperty.all<Color>(const Color(0xFF5A32AE)),
+                      foregroundColor: WidgetStateProperty.all<Color>(Colors.white),
+                      backgroundColor: WidgetStateProperty.all<Color>(const Color(0xFF5A32AE)),
 
-                      shape: MaterialStateProperty.all<BeveledRectangleBorder>(
+                      shape: WidgetStateProperty.all<BeveledRectangleBorder>(
                         BeveledRectangleBorder(
                           borderRadius: BorderRadius.circular(5.0), // Apply a 20.0 radius
 
@@ -294,7 +295,7 @@ class _SignupState extends State<Signup> {
                           boxShadow: [
                             BoxShadow(
                               color: Colors.black.withOpacity(0.5),
-                              offset: Offset(0, 2), // Horizontal and vertical shadow offset
+                              offset: const Offset(0, 2), // Horizontal and vertical shadow offset
                               blurRadius: 4, // Blur radius for the shadow
                             ),
                           ],
@@ -327,7 +328,7 @@ class _SignupState extends State<Signup> {
                           boxShadow: [
                             BoxShadow(
                               color: Colors.black.withOpacity(0.5),
-                              offset: Offset(0, 2), // Horizontal and vertical shadow offset
+                              offset: const Offset(0, 2), // Horizontal and vertical shadow offset
                               blurRadius: 4, // Blur radius for the shadow
                             ),
                           ],

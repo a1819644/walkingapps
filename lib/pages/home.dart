@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Home extends StatefulWidget {
@@ -74,6 +73,8 @@ class _HomeState extends State<Home> {
                           borderSide: BorderSide.none,),
                       ),
                       validator: (value) {
+                        return null;
+                      
                         // ... your email validation logic ...
                       },
                     ),
@@ -151,10 +152,10 @@ class _HomeState extends State<Home> {
                   width: double.infinity, // Make button take fullwidth
                   child: ElevatedButton(
                     style: ButtonStyle(
-                      foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                      backgroundColor: MaterialStateProperty.all<Color>(const Color(0xFF5A32AE)),
+                      foregroundColor: WidgetStateProperty.all<Color>(Colors.white),
+                      backgroundColor: WidgetStateProperty.all<Color>(const Color(0xFF5A32AE)),
 
-                      shape: MaterialStateProperty.all<BeveledRectangleBorder>(
+                      shape: WidgetStateProperty.all<BeveledRectangleBorder>(
                         BeveledRectangleBorder(
                           borderRadius: BorderRadius.circular(5.0), // Apply a 20.0 radius
 
@@ -187,7 +188,7 @@ class _HomeState extends State<Home> {
                           boxShadow: [
                             BoxShadow(
                               color: Colors.black.withOpacity(0.5),
-                              offset: Offset(0, 2), // Horizontal and vertical shadow offset
+                              offset: const Offset(0, 2), // Horizontal and vertical shadow offset
                               blurRadius: 4, // Blur radius for the shadow
                             ),
                           ],
@@ -220,7 +221,7 @@ class _HomeState extends State<Home> {
                           boxShadow: [
                             BoxShadow(
                               color: Colors.black.withOpacity(0.5),
-                              offset: Offset(0, 2), // Horizontal and vertical shadow offset
+                              offset: const Offset(0, 2), // Horizontal and vertical shadow offset
                               blurRadius: 4, // Blur radius for the shadow
                             ),
                           ],
