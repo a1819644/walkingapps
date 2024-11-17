@@ -35,6 +35,16 @@ class AppStyles{
   // Progress page styling
 
   // box decoration
-
+  static BoxDecoration gradientBoxDecorationforWeeklyProgressGraph = BoxDecoration(
+    gradient: const LinearGradient(
+      colors: [
+        Color(0xFFB09FFF), // Replace with your own colors
+        Color(0xFF8D79F6),
+      ],
+      begin: Alignment.topLeft,
+      end: Alignment.bottomRight,
+    ),
+    borderRadius: BorderRadius.circular(10),
+  );
 
 }
