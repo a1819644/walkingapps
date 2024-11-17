@@ -45,7 +45,7 @@ class Weeklychart extends StatelessWidget {
                     showTitles: true,
                     interval: 1, // Ensures each X-axis value maps correctly
                     getTitlesWidget: (value, meta) {
-                      // Map days correctly to X-axis values
+                      // Map days correctly to X-axis valuesFontWeight.w800,
                       if (value >= 0 && value < days.length) {
                         return Text(
                           days[value.toInt()],
