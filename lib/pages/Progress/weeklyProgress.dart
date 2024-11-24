@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:fl_chart/fl_chart.dart';
+import 'package:walkingapps/pages/Progress/animatedProgressChart.dart';
 import 'package:walkingapps/pages/Progress/weeklyChart.dart';
+import 'package:walkingapps/pages/styles.dart';
 import 'hoverEffectDaily.dart';
 import 'hoverEffectWeekly.dart';
 import 'hoverEffectMonthly.dart';
@@ -167,14 +169,75 @@ class _WeeklyProgressState extends State<WeeklyProgress> {
                   ),
                   Row(
                     children: [
-                      Container(
-                        padding: const EdgeInsets.all(10),
-                        width: 400,
-                        height: 300,
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.90,
+                        height: 250,
                         child: Weeklychart(),
                       ),
                     ],
-                  )
+                  ),
+                  const SizedBox(height: 15,),
+                  Row(
+                    children: [
+                        Container(
+                          width: MediaQuery.of(context).size.width * 0.90,
+                          height: 100,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            gradient: AppStyles.gradientBoxDecoration.gradient,
+                            border: Border.all(
+                              color: const Color(0x00ffffff) , // Border color based on isTapped state
+                              width: 0.1, // Border width
+                            ),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black.withOpacity(0.2) , // Shadow color
+                                spreadRadius: 0, // Spread radius
+                                blurRadius: 0.5, // Blur radius
+                                offset: const Offset(0, 1), // Offset in x and y direction
+                              ),
+                            ],
+                          ),
+                          child: Row(
+                            children: [
+                              const Padding(
+                                padding: EdgeInsets.fromLTRB(10.0, 30.0, 0.0, 10.0),
+                                child: SizedBox(
+                                  child: Column(
+                                    children: [
+                                      Text(
+                                        'Total Steps',
+                                        style: TextStyle(
+                                          fontSize: 15.0,
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                          letterSpacing: 1.0,
+                                        ),
+                                      ),
+                                      Text(
+                                        '10,000',
+                                        style: TextStyle(
+                                          fontSize: 15.0,
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                          letterSpacing: 1.0,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                height: 50.0,
+                                width: 100.0,
+
+                                child: const AnimatedProgressChart(),
+                              ),
+                            ],
+                          ),
+                        ),
+                    ],
+                  ),
                 ],
               ),
           )),
